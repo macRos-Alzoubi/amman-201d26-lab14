@@ -9,8 +9,20 @@ const Cart = function (items) {
 Cart.prototype.addItem = function (product, quantity) {
   // TODO: Fill in this instance method to create a new CartItem and add it to this.items
    let newItem  = new CartItem(product,quantity);
-   this.items.push(newItem);
+   let found = false;
+   quantity = parseInt(quantity);
 
+   this.items.forEach(cart => {
+     if(cart.product === product){
+       let cartQuantity = parseInt(cart.quantity);
+       cartQuantity += quantity;
+       cart.quantity = cartQuantity;
+       found = true;
+     }
+   });
+
+   if(!found)
+    this.items.push(newItem);
 };
 
 Cart.prototype.saveToLocalStorage = function () {
@@ -21,6 +33,16 @@ Cart.prototype.saveToLocalStorage = function () {
 Cart.prototype.removeItem = function (item) {
   // TODO: Fill in this instance method to remove one item from the cart.
   // Note: You will have to decide what kind of parameter to pass in here!
+
+  for(let i = 0; i < this.items.length; i++){
+    if(this.items[i].product === item.product && this.items[i].quantity === item.quantity){
+
+      const list1 = this.items.slice(0 , i);
+      const list2 = this.items.slice(i + 1);
+
+      this.items = list1.concat(list2);
+    }
+  }
 };
 
 const CartItem = function (product, quantity) {
