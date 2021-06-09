@@ -1,0 +1,124 @@
+body{
+    font-family: 'Roboto Mono', monospace;
+    background-color: antiquewhite;
+    position: relative;
+    font-weight: 600;
+}
+body > header{
+    background-color: #444242;
+    margin-bottom: 60px;
+    padding: 20px 30px;
+}
+
+header::after{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 0;
+    clear:both;
+}
+
+h1{
+    font-size: 270%;
+    float:left;  
+    color: #e9dada;
+}
+
+nav{
+    float: right;
+    /* margin-top: 10px;
+    margin-right: 25px; */    
+}
+
+nav ul li {
+    display: inline-block;
+    margin-left: 7px;
+}
+
+nav ul li a:link,
+nav ul li a:visited{
+    text-decoration: none;
+    color: #e9dada;
+    padding: 15px;
+    transition: opacity 0.25s;
+}
+
+nav ul li a:hover,
+nav ul li a:active{
+    opacity: 0.75;
+}
+
+.card header h1 {
+    color: #b90909;
+    text-align: center;
+    float: none;
+    margin-top: -20px;
+    margin-bottom: 40px;
+}
+
+.copy {
+    width: 55%;
+    margin: 0 auto;
+    line-height: 1.4;
+    font-size: 115%;
+}
+
+#catalog{
+    margin-top: 60px;
+}
+
+#catalog legend{
+  color: #b90909;
+  font-size: 160%;
+}
+
+input[type="submit"]{
+    display: block;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #fff;
+    color: #b90909;
+    border: 1px solid #b90909;
+    cursor: pointer;
+    transition: all 0.20s ease-in-out;
+    border-radius: 7px;
+}
+
+input[type="submit"]:hover{
+    background-color: #b90909;
+    color: #fff;
+    border: 1px solid #444242;
+}
+
+footer{
+    width: 100%;
+    background-color: #444242;
+    font-size: 120%;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 45px 0;
+    color: #e9dada;
+}
+
+/* Cart.html */
+
+table, th, td {
+    border: 1px solid #444242;
+}
+
+th, td {
+    padding: 5px;
+}
+
+table#cart{
+    width: 60%;
+    margin: 40px auto;
+    border-collapse: collapse;
+}
+
+.copy ol {
+    text-align: center;
+}
+
